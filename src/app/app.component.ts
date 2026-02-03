@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'enquete-daily';
+
+  chooseTwoHours(){
+    console.log('escolheu duas horas de daily')
+  }
+
+  chooseDaily5Am(){
+    console.log('escolheu daily as 5 da manha')
+  }
 }
