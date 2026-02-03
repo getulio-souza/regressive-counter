@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-timer',
@@ -8,22 +7,28 @@ import { interval } from 'rxjs';
 })
 export class TimerComponent implements OnInit {
 
-  startTimer: number = 10;
-  
+  counter: any;
+  timer: number = 10;
+  showMessage: boolean = false;
+  showTimer: boolean = true;
 
   ngOnInit(): void {
 
-   setInterval(()=> {
-    this.startTimer = this.startTimer -1;
+   this.counter = setInterval(()=> {
 
-    if(this.startTimer === 0){
-      console.log('chegou no zero')
+    this.timer = this.timer -1;
 
+    if(this.timer <= 0){
+      this.stopCounter()
+
+      this.showMessage = true;
+      this.showTimer = false;
     }
-    return this.startTimer
    },1000)
 
 }
 
-
+  stopCounter(){
+    clearInterval(this.counter)
+  }
 }

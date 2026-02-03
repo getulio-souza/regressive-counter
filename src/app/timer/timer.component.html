@@ -1,4 +1,5 @@
 <div style="text-align: center;">
     <h2>A proxima votação começa em:</h2>
-    <span>{{startTimer}}</span>
+    <span *ngIf="showTimer">{{timer}}</span>
+    <span style="color: red;" *ngIf="showMessage">Contagem encerrada</span>
 </div>
